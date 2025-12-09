@@ -224,7 +224,46 @@ print(f"Output shape: {y.shape}")
 
 ### Code Organization
 
-Really depends on the individual. A generally adopted approach is to divide your code into meaningful chunks, if e.g. in jupyer notebooks. This helps to distinguish steps from each other and makes it easier to rerun and debug issues. 
+Organizing code effectively is one of the simplest yet most powerful ways to improve the quality of a deep learning project. A clear folder structure, separated components, minimal hardcoding, and tidy notebooks make your work more readable, maintainable, and scalable. Good organization saves time, reduces errors, and supports smoother collaboration—especially in fast-paced, team-based environments.
+
+That said, the exact approach can vary from person to person. A commonly used method, especially in Jupyter notebooks, is to break the workflow into clear, meaningful sections. This makes each step easier to understand, rerun, and debug, while keeping the overall project structure clean and manageable.
+
+```python
+# Example project structure for a deep learning workflow
+project/
+│── data/               # Datasets and preprocessing scripts
+│── models/             # Model architectures
+│── utils/              # Helper functions (metrics, plotting, etc.)
+│── notebooks/          # Jupyter notebooks for exploration
+│── experiments/        # Logs, checkpoints, outputs
+│── train.py            # Training loop
+│── evaluate.py         # Evaluation script
+│── requirements.txt    # Package versions
+```
+```python
+# Example: Avoiding hardcoded paths
+DATA_PATH = "./data/"
+train_data = load_dataset(DATA_PATH)
+```
+```python
+# Example: Clear sections inside a Jupyter notebook
+
+# 1. Import libraries
+import torch
+import torch.nn as nn
+
+# 2. Load and preprocess data
+...
+
+# 3. Define model
+...
+
+# 4. Train model
+...
+
+# 5. Evaluate model
+...
+```
 
 ### Documentation and Tracking
 
